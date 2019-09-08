@@ -1,0 +1,14 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: ingress-service
+  labels:
+    app.kubernetes.io/name: ingress-service
+    app.kubernetes.io/part-of: ingress-service
+data:
+  enable-opentracing: "true"
+  datadog-collector-host: $HOST_IP
+  # Defaults
+  datadog-service-name: "nginx"
+  datadog-collector-port: "8126"
+  datadog-operation-name-override: "nginx.handle"
